@@ -28,43 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            label1 = new Label();
+            txtBoxPassword = new TextBox();
+            lblPasswordShow = new Label();
             SuspendLayout();
             // 
-            // textBox1
+            // txtBoxPassword
             // 
-            textBox1.Location = new Point(141, 132);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(500, 27);
-            textBox1.TabIndex = 0;
-            textBox1.TextChanged += textBox1_TextChanged;
+            txtBoxPassword.Location = new Point(141, 132);
+            txtBoxPassword.Name = "txtBoxPassword";
+            txtBoxPassword.Size = new Size(500, 27);
+            txtBoxPassword.TabIndex = 0;
+            txtBoxPassword.TextChanged += textBox1_TextChanged;
             // 
-            // label1
+            // lblPasswordShow
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(335, 241);
-            label1.Name = "label1";
-            label1.Size = new Size(50, 20);
-            label1.TabIndex = 1;
-            label1.Text = "label1";
+            lblPasswordShow.AutoSize = true;
+            lblPasswordShow.Location = new Point(335, 241);
+            lblPasswordShow.Name = "lblPasswordShow";
+            lblPasswordShow.Size = new Size(13, 20);
+            lblPasswordShow.TabIndex = 1;
+            lblPasswordShow.Text = " ";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(label1);
-            Controls.Add(textBox1);
+            ClientSize = new Size(782, 353);
+            Controls.Add(lblPasswordShow);
+            Controls.Add(txtBoxPassword);
+            MinimumSize = new Size(800, 400);
             Name = "Form1";
-            Text = "Form1";
+            Text = "RandomPasswordGenerator";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private TextBox textBox1;
-        private Label label1;
+        private TextBox txtBoxPassword;
+        private Label lblPasswordShow;
     }
 }
