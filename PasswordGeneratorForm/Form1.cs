@@ -1,13 +1,22 @@
-﻿namespace PasswordGeneratorForm
+﻿using System.Runtime.CompilerServices;
+
+namespace PasswordGeneratorForm
 {
     public partial class Form1 : Form
     {
         public Form1()
         {
             InitializeComponent();
+
+        }
+        public delegate void PasswordMethodDelegate(TextBox txtBoxPassword, Label lblPasswordShow);
+        public static PasswordMethodDelegate passwordMethodDelegate = PasswordMethod;
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            passwordMethodDelegate(txtBoxPassword, lblPasswordShow);
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        public  static void PasswordMethod(TextBox txtBoxPassword,Label lblPasswordShow) 
         {
             if (txtBoxPassword.Text.Length <= 6) { lblPasswordShow.Text = "Password Level is Low"; lblPasswordShow.ForeColor = Color.Red; }
             else if (txtBoxPassword.Text.All(char.IsDigit) && txtBoxPassword.Text.All(char.IsLetter)) { lblPasswordShow.Text = "Password Level is Low"; lblPasswordShow.ForeColor = Color.Red; }
