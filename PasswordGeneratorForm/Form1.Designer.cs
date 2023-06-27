@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             txtBoxPassword = new TextBox();
             lblPasswordShow = new Label();
             SuspendLayout();
@@ -60,6 +61,7 @@
             ClientSize = new Size(782, 353);
             Controls.Add(lblPasswordShow);
             Controls.Add(txtBoxPassword);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximumSize = new Size(800, 400);
             MinimumSize = new Size(800, 400);
             Name = "Form1";

@@ -16,7 +16,7 @@ namespace PasswordGeneratorForm
             passwordMethodDelegate(txtBoxPassword, lblPasswordShow);
         }
 
-        public  static void PasswordMethod(TextBox txtBoxPassword,Label lblPasswordShow) 
+        public static void PasswordMethod(TextBox txtBoxPassword, Label lblPasswordShow)
         {
             if (txtBoxPassword.Text.Length <= 6) { lblPasswordShow.Text = "Password Level is Low"; lblPasswordShow.ForeColor = Color.Red; }
             else if (txtBoxPassword.Text.All(char.IsDigit) && txtBoxPassword.Text.All(char.IsLetter)) { lblPasswordShow.Text = "Password Level is Low"; lblPasswordShow.ForeColor = Color.Red; }
