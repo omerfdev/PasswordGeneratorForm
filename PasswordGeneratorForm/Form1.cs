@@ -24,13 +24,13 @@ namespace PasswordGeneratorForm
 			}
 			else if (!password.Any(char.IsUpper) || !password.Any(char.IsLower))
 			{
-				MessageBox.Show("Password must contain at least one capital letter.");
+				MessageBox.Show("Password must contain at least one capital or small letter.");
 			}
 			else if (!password.Any(char.IsDigit))
 			{
 				MessageBox.Show("The password must contain at least one number.");
 			}
-			else if (!password.Any(c => "_,.,!,-,*".Contains(c)))
+			else if (!password.Any(c => "_,.,!,-,*,,".Contains(c)))
 			{
 				MessageBox.Show("Password is at least one _ . , ! must contain the character.");
 			}
