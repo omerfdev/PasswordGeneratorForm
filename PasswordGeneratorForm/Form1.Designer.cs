@@ -44,7 +44,7 @@
 			txtBoxPassword.PlaceholderText = "Your Password";
 			txtBoxPassword.Size = new Size(478, 27);
 			txtBoxPassword.TabIndex = 0;
-			txtBoxPassword.TextChanged += textBox1_TextChanged;
+			
 			// 
 			// lblPasswordShow
 			// 

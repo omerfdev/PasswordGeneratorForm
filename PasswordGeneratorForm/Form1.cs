@@ -11,10 +11,7 @@ namespace PasswordGeneratorForm
 		}
 		public delegate void PasswordMethodDelegate(TextBox txtBoxPassword, TextBox textBoxConfirmPassword, Label lblPasswordShow);
 		public static PasswordMethodDelegate passwordMethodDelegate = PasswordMethod;
-		private void textBox1_TextChanged(object sender, EventArgs e)
-		{
-
-		}
+		
 
 		public static void PasswordMethod(TextBox txtBoxPassword, TextBox txtBoxConfirmPassword, Label lblPasswordShow)
 		{
