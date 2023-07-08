@@ -22,7 +22,7 @@ namespace PasswordGeneratorForm
 			{
 				MessageBox.Show("The password can be up to 16 characters.");
 			}
-			else if (!password.Any(char.IsUpper) && !password.Any(char.IsLower))
+			else if (!password.Any(char.IsUpper) || !password.Any(char.IsLower))
 			{
 				MessageBox.Show("Password must contain at least one capital letter.");
 			}
