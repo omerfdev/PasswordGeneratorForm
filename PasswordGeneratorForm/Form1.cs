@@ -30,7 +30,7 @@ namespace PasswordGeneratorForm
 			{
 				MessageBox.Show("The password must contain at least one number.");
 			}
-			else if (!password.Any(c => "_.,!".Contains(c)))
+			else if (!password.Any(c => "_,.,!,-".Contains(c)))
 			{
 				MessageBox.Show("Password is at least one _ . , ! must contain the character.");
 			}
