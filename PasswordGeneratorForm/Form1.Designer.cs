@@ -33,6 +33,7 @@
 			lblPasswordShow = new Label();
 			txtBoxConfirmPassword = new TextBox();
 			btnLogin = new Button();
+			chkBoxRemindMe = new CheckBox();
 			SuspendLayout();
 			// 
 			// txtBoxPassword
@@ -44,7 +45,6 @@
 			txtBoxPassword.PlaceholderText = "Your Password";
 			txtBoxPassword.Size = new Size(478, 27);
 			txtBoxPassword.TabIndex = 0;
-			
 			// 
 			// lblPasswordShow
 			// 
@@ -68,7 +68,7 @@
 			// 
 			// btnLogin
 			// 
-			btnLogin.Location = new Point(295, 194);
+			btnLogin.Location = new Point(348, 174);
 			btnLogin.Name = "btnLogin";
 			btnLogin.Size = new Size(99, 34);
 			btnLogin.TabIndex = 3;
@@ -76,11 +76,22 @@
 			btnLogin.UseVisualStyleBackColor = true;
 			btnLogin.Click += btnLogin_Click;
 			// 
+			// chkBoxRemindMe
+			// 
+			chkBoxRemindMe.AutoSize = true;
+			chkBoxRemindMe.Location = new Point(219, 180);
+			chkBoxRemindMe.Name = "chkBoxRemindMe";
+			chkBoxRemindMe.Size = new Size(107, 24);
+			chkBoxRemindMe.TabIndex = 4;
+			chkBoxRemindMe.Text = "Remind Me";
+			chkBoxRemindMe.UseVisualStyleBackColor = true;
+			// 
 			// Form1
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(782, 353);
+			Controls.Add(chkBoxRemindMe);
 			Controls.Add(btnLogin);
 			Controls.Add(txtBoxConfirmPassword);
 			Controls.Add(lblPasswordShow);
@@ -90,6 +101,7 @@
 			MinimumSize = new Size(800, 400);
 			Name = "Form1";
 			Text = "RandomPasswordGenerator";
+			Load += Form1_Load;
 			ResumeLayout(false);
 			PerformLayout();
 		}
@@ -100,5 +112,6 @@
 		private Label lblPasswordShow;
 		private TextBox txtBoxConfirmPassword;
 		private Button btnLogin;
+		private CheckBox chkBoxRemindMe;
 	}
 }

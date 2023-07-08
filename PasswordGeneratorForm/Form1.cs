@@ -11,7 +11,7 @@ namespace PasswordGeneratorForm
 		}
 		public delegate void PasswordMethodDelegate(TextBox txtBoxPassword, TextBox textBoxConfirmPassword, Label lblPasswordShow);
 		public static PasswordMethodDelegate passwordMethodDelegate = PasswordMethod;
-		
+
 
 		public static void PasswordMethod(TextBox txtBoxPassword, TextBox txtBoxConfirmPassword, Label lblPasswordShow)
 		{
@@ -47,10 +47,36 @@ namespace PasswordGeneratorForm
 				else if (txtBoxPassword.Text.Length >= 8 && txtBoxPassword.Text.Any(char.IsLetter) && txtBoxPassword.Text.Any(char.IsDigit)) { lblPasswordShow.Text = "Password Level is Very Good"; lblPasswordShow.ForeColor = Color.Green; }
 			}
 		}
-
+		private string dosyaYolu = "veriler.txt";
 		private void btnLogin_Click(object sender, EventArgs e)
 		{
 			passwordMethodDelegate(txtBoxPassword, txtBoxConfirmPassword, lblPasswordShow);
+			if (chkBoxRemindMe.Checked)
+			{
+				string[] veriler = { txtBoxPassword.Text, txtBoxConfirmPassword.Text };
+				File.WriteAllLines(dosyaYolu, veriler);
+			}
+			else 
+			{
+				txtBoxPassword.Text = string.Empty; txtBoxConfirmPassword.Text = string.Empty;
+				string[] veriler = { txtBoxPassword.Text, txtBoxConfirmPassword.Text };
+				File.WriteAllLines(dosyaYolu, veriler);
+			}
+		}
+
+		private void Form1_Load(object sender, EventArgs e)
+		{
+			if (File.Exists(dosyaYolu))
+			{
+				string[] veriler = File.ReadAllLines(dosyaYolu);
+
+				if (veriler.Length >= 2)
+				{
+					txtBoxPassword .Text = veriler[0];
+					txtBoxConfirmPassword .Text = veriler[1];
+				}
+				else { txtBoxPassword.Text=string.Empty;txtBoxConfirmPassword.Text=string.Empty; }	
+			}
 		}
 	}
 }
